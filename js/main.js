@@ -1,8 +1,27 @@
 $(document).ready(function() {
 
+    var getSlideShow = document.getElementById('slideshow');
+    var exitBlock;
+
+    $(getSlideShow).mouseover(function() {
+        alert("made it to mouseover");
+        exitBlock = setInterval(blockUser(), 1000);
+    });
+
+    $(getSlideShow).mouseout(function() {
+        clearInterval(exitBlock);
+    });
+
     // Invoco le funzioni per cambiare slide
     $('.next').click(nextSlide);  // Al click richiamo la funzione per aggiornare l'immagine visualizzando la successiva
     $('.prev').click(prevSlide);  // Al click richiamo la funzione per aggiornare l'immagine visualizzando la successiva
+
+
+    function blockUser() {
+        alert("You are blocked!!!!!");
+    }
+
+
 
     // Definisco le funzioni nextSlide
     function nextSlide() {
