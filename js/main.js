@@ -1,14 +1,12 @@
 $(document).ready(function() {
 
-    var getSlideShow = document.getElementById('slideshow');
     var exitBlock;
 
-    $(getSlideShow).mouseover(function() {
-        alert("made it to mouseover");
+    $('.images').mouseover(function() {
         exitBlock = setInterval(blockUser(), 1000);
     });
 
-    $(getSlideShow).mouseout(function() {
+    $('.images').mouseout(function() {
         clearInterval(exitBlock);
     });
 
